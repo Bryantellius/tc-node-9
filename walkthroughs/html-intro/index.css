@@ -21,5 +21,8 @@ main {
 }
 
 /* General/Common Class Rulesets */
+.m-2 {
+  margin: 2rem;
+}
 
 /* Specific Rulesets */
