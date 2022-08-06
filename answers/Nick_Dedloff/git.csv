@@ -1,0 +1,4 @@
+git init, initalizes git
+git add ., adds all files in a directory to stagig
+git commit, commits a file 
+git push, pushes commits

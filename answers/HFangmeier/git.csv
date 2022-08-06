@@ -1,0 +1,21 @@
+git config, displays git main help/command file
+git gonfig --global user.name (user.email), sets name (email) for git
+git cd [file name here], change directory to specified file
+git cd .., change directory to parent file
+git init, creates a new local repository
+git clone [ssh url here]/[local directory], clones an online repository/a local repository
+git add ., stages current changes for a commit
+git commit -m "message here", commits current staged changes to the local repository with a message
+git add [filename], adds a new file to the current directory
+git push, pushes all commited changes to the currently selected online repository
+git status, displays the current status of add/commit/files and the current branch selected
+git remote add origin [server address], connect to desired server to push to
+git branch [branch name], create a new branch in your repository
+git reset [branch name], resets local repository to desired origin discarding any local commits after
+git revert [branch name], reverts online repository branch to desired origin while keeping a historical copy
+git merge [branch name], merges specified branch with currently selected online
+git checkout [branch name], select which branch you are currently working with
+git [command] --verbose, displays more in depth/full information about current inquiry/command
+git branch -f [branch name] HEAD~3, used to force git to move a branch around (3 commits above selected commit)
+git pull, pulls any updates from the online repository
+git rebase, a fancy way to pull???

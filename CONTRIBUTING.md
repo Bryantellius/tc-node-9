@@ -35,6 +35,18 @@ If you need a reference for a started answer, view [answers/Bryantellius/git.csv
 
 Be sure to add, commit and push your work back to Github. Once your work is on Github, [submit a pull request](#how-to-submit-a-pull-request).
 
+### Second
+
+For your second contribution, start the your folder labeled by your _github username_ under the `answers/` directory (ex: `answers/Bryantellius`).
+
+Complete the following:
+
+1. Create the following file under your newly created folder: `fact.txt`
+2. Add a fact to this file that you don't think any other student would add as well. Use [answers/Bryantellius/fact.txt](answers/Bryantellius/fact.txt) as a reference
+    - You fact can literally be anything (albeit appropriate). Make sure it is unique.
+
+Be sure to add, commit and push your work back to Github. Once your work is on Github, [submit a pull request](#how-to-submit-a-pull-request).
+
 ## Notes
 
 If you take notes during class or outside reading, add them to the `notes/` directory under a sub-folder labeled by the _topic_, followed by a file labeled by your _github username_ (ex: `notes/git/Bryantellius.md`).

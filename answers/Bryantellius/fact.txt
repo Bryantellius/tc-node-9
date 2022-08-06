@@ -1,0 +1,1 @@
+The number for the most calculated digits of Pi are 100,000,000,000,000 by Emma Haruka Iwao. She used a computer with 864 GB of RAM and 663 TB of storage. It took 158 days to calculate that many digits! 

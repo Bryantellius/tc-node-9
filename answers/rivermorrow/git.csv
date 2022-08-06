@@ -1,0 +1,4 @@
+1. git init, create a new repo
+2. git clone, create a copy of a repo
+3. git status, check changes to files
+git add ., add files to the staging area

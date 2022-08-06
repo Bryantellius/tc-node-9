@@ -1,0 +1,5 @@
+git clone, Makes a copy of a remote repository
+git push, pushes updates to GitHub after commiting 
+git pull, pulls commits from a remote repository (origin)
+git add, moves changes from working area to staging area 
+git commit, finalizes your changes in order to be pushed 
