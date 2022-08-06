@@ -2,3 +2,4 @@ git init, initializes new repository
 git push, pushes changes 
 git branch <name>, makes a new branch 
 git branch, look at the branches 
+git pull, pulls from remote repository to local repository 
