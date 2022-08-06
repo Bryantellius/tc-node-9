@@ -1,6 +1,6 @@
-git init (initialize repository),
-git add (adds files to staging area),
-git commit (commits files to staging area),
-git push (pushes changes(commits) to branch),
-git pull (pulls commits from branch),
-git clone (clones the project),
+git init, initialize repository
+git add, adds files to staging area
+git commit, commits files to staging area
+git push, pushes changes(commits) to branch
+git pull, pulls commits from branch
+git clone, clones the project
