@@ -1,0 +1,7 @@
+git init, starts tracing all changes in the current folder
+git status, shows all changes since the previous commit
+git add ., adds all files 
+git log, view commit history
+git clone <url>, it downloads a remote repository from a url 
+git branch <brach name>, creates a new branch 
+git checkout <branch name>, switches to a new branch
