@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | SomeService</title>
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <div class="min-h-100 d-flex justify-center align-center">
+      <main>
+        <div><img src="" alt="" /></div>
+        <div class="d-flex justify-between align-center">
+          <h1>Log In</h1>
+          <a href="#">NO ACCOUNT YET?</a>
+        </div>
+        <form>
+          <div class="form-group">
+            <input type="email" name="email" id="email" class="w-100 p-2" />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="w-100 p-2"
+            />
+          </div>
+          <div class="form-group d-flex justify-between align-center">
+            <div class="p-2">
+              <input type="checkbox" name="remember" id="remember" />
+              <label for="remember">Remember me</label>
+            </div>
+            <div class="p-2">
+              <a href="#">Forgot Password?</a>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="w-100 p-2">Log In</button>
+          </div>
+        </form>
+        <div class="divider d-flex justify-around align-center">
+          <div>
+            <hr />
+          </div>
+          <div>
+            <p>Or log in with</p>
+          </div>
+          <div>
+            <hr />
+          </div>
+        </div>
+        <div class="auth">
+          <div class="d-flex justify-around align-center">
+            <button class="auth-option w-100 p-2">🥲 GitHub</button
+            ><button class="auth-option w-100 p-2">✅ Google</button
+            ><button class="auth-option w-100 p-2">🔥Netlify</button>
+          </div>
+          <div>
+            <button class="auth-option w-100 p-2">SSO</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
