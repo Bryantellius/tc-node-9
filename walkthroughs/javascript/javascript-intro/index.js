@@ -1,23 +1,9 @@
-// Initializing variables (Declaration + Assignment)
-let name = "Blue Mic"; // mic name is Blue Mic
-let volume = 20; // level is at 20
-let isMuted = false; // not muted
-var roomName = "Podcast room";
-const id = "1234";
+let firstName = "Ben";
 
-console.log("Hello World!");
+let lastName = "Bryant";
 
-console.log("name:", name);
-console.log("volume:", volume);
-console.log("isMuted:", isMuted);
-console.log(roomName);
-console.log(id);
+let fullName = firstName + " " + lastName; // => "Ben Bryant"
 
-// Reassigning variables
-name = "Red Mic";
-volume = 30;
-isMuted = true;
+let isMuted = false;
 
-console.log("name:", name);
-console.log("volume:", volume);
-console.log("isMuted:", isMuted);
+let volumeLevel = 20;
