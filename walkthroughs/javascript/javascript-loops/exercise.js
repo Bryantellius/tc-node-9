@@ -100,3 +100,56 @@ do {
 
   doWhileF++;
 } while (doWhileF <= end);
+
+// Exercise 4: Find Value
+console.log("FIND VALUE: FOR");
+
+let value = Math.round(Math.random() * 500); // creates a random number between 0 and 500
+let n = Math.round(Math.random() * (500 - 100) + 100); // creates a random number between 100 and 500
+
+// search for value
+for (let num = 0; num <= n; num++) {
+  if (num == value) {
+    console.log("Found Value");
+    break;
+  } else if (num == n) {
+    console.log("Didn't find value");
+  }
+}
+
+// Exercise 5: Custom FIZZ BUZZ
+console.log("VARIABLE FIZZ BUZZ: FOR");
+
+let fizzDivisor = Math.round(Math.random() * (10 - 1) + 1);
+let buzzDivisor = Math.round(Math.random() * (10 - 1) + 1);
+n = Math.round(Math.random() * (1000 - 1) + 1);
+start = Math.round(Math.random() * (10 - 1) + 1);
+
+for (let i = start; i <= n; i++) {
+  if (i % fizzDivisor == 0 && i % buzzDivisor == 0) {
+    console.log(i, "FIZZBUZZ");
+  } else if (i % fizzDivisor == 0) {
+    console.log(i, "FIZZ");
+  } else if (i % buzzDivisor == 0) {
+    console.log(i, "BUZZ");
+  }
+}
+
+// DEBUG
+
+value = Math.round(Math.random() * 500);
+n = Math.round(Math.random() * (500 - 100) + 100);
+
+// check to see if the value is in the range of 0-n
+if (value > n) {
+  // if not, don't go on to start the loop
+  console.log("Did not find value");
+} else {
+  // if yes, search for value in the loop
+  for (let m = 0; m != n; m++) {
+    if (m == value) {
+      console.log(m + " Found value!");
+      break;
+    }
+  }
+}
