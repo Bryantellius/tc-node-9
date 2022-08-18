@@ -50,3 +50,148 @@ for (let idx = 0; idx < actions.length; idx++) {
 // Arrays can hold any values with different data types
 let mixedBad = [1, true, "true", !null];
 
+// What are arrays?
+
+// // matrix of data
+// // container for multiple variables
+// // list of data
+// // one structure for many values
+
+// How to create an array?
+
+// array literal syntax
+let emptyArray = [];
+
+let values = [1, 2, 3];
+
+for (let i = 0; i < values.length; i++) {
+  // access each array value
+  // and perform logic
+  values[i];
+}
+
+// let letters = [a, b, c, d];
+
+// Objects
+
+let hobbit = {};
+
+hobbit.firstName = "Samwise";
+hobbit.lastName = "Gamgee";
+hobbit.isFellowship = true;
+
+console.log(hobbit);
+
+let product = {
+  description: "Describes product",
+  name: "Product Name",
+  manufacturer: "WhoMadeIt Inc",
+  price: 19.99,
+  discount: 0,
+  total: 19.99,
+  images: ["image1.jpg", "image2.jpg"],
+  size: {
+    width: 30,
+    length: 55,
+  },
+  updatePrice: function (newPrice) {
+    // updates price property
+    this.price = newPrice;
+
+    // update total
+    this.updateTotal();
+  },
+  updateDiscount: function (newDiscount) {
+    // updates discount property
+    this.discount = newDiscount;
+
+    // update total
+    this.updateTotal();
+  },
+  updateTotal: function () {
+    this.total = this.price - this.price * this.discount;
+  },
+};
+
+console.log(`${product.name} is $${product.total}`);
+
+product.updatePrice(29.99);
+
+console.log(`${product.name} is $${product.total}`);
+
+product.updateDiscount(0.5);
+
+console.log(`${product.name} is $${product.total}`);
+
+// Math
+
+Math.floor(19.99); // 19
+Math.ceil(19.01); // 20
+Math.round(19.5); // 20
+Math.max(12, 21, 19, 91); // 91
+Math.min(12, 21, 19, 91); // 12
+
+// Date
+
+console.log(Date.now());
+console.log(new Date().toLocaleDateString());
+
+// Strings
+
+let str = "Hello World";
+str.length; // 11
+
+let hobbits = [
+  {
+    name: "Frodo",
+  },
+  {
+    name: "Sam",
+  },
+  {
+    name: "Pippin",
+  },
+  {
+    name: "Merry",
+  },
+];
+
+console.log(hobbits);
+
+// Total length of hobbit names
+let total = 0;
+
+for (let i = 0; i < hobbits.length; i++) {
+  total += hobbits[i].name.length;
+}
+
+console.log(`Total characters in hobbit names: ${total}`);
+
+let strExample = "Hello,World";
+
+for (let i = 0; i < strExample.length; i++) {
+  console.log(strExample[i]);
+}
+
+// split: string to an array
+let characters = strExample.split(" "); // takes seperator
+console.log(characters);
+
+// join: array to a string
+let sentence = characters.join(" "); // takes seperator
+console.log(sentence);
+
+function reverseStr(str) {
+  let result = "";
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    result += str[i];
+  }
+
+  return result;
+}
+
+let test1 = reverseStr("Hello World");
+let test2 = reverseStr("Ben Bryant");
+
+console.log(test1, test2);
