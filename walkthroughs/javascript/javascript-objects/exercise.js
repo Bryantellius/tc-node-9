@@ -113,37 +113,37 @@ console.log(reverseWordsFromSentence(sentence));
 
 // Exercise 4
 
-let csvData = "name,age\nFrodo,50\nSam,38\nMerry,36\nPippin,26";
+let csvData = "name,age,isFellowship\nFrodo,50,true\nSam,38,true\nMerry,36,true\nPippin,26,true\nBilbo,111,false";
 
 console.log(csvData);
 
-function toJSON() {
-  let dataArr = csvData.split("\n");
+function toJSON(input) {
+  let dataArr = input.split("\n");
 
   // get the headers
-  let headers = dataArr[0];
+  let headers = dataArr[0].split(","); // "name,age" -> ["name", "age"]
 
   // get each record
+  // returns a subarray from starting index, to ending index (if not supplied, end of array)
   let records = dataArr.slice(1);
 
   console.log(headers, records);
+
+  let json = records.map(function (record) {
+    let values = record.split(","); // "Frodo,50" -> ["Frodo", "50"]
+    let obj = {};
+
+    // add headers a properties on the obj
+    // use the header index to grab the corresponding value at the same index
+    headers.forEach(function (header, index) {
+      obj[header] = values[index];
+    })
+
+    return obj;
+  })
+
+  return json;
 }
 
-toJSON(csvData);
-
-let names = ["Ben"];
-
-// add elements to the back of an array
-names.push("Cameron");
-
-// remove elements to the back of an array
-names.pop();
-
-// add elements to the front of an array
-names.unshift("Seth");
-
-// remove elements to the front of an array
-names.shift();
-
-// adds or remove elements anywhere specified in an array
-names.splice(1, 1);
+let result = toJSON(csvData);
+console.log(result);
