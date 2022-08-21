@@ -1,11 +1,12 @@
-git init, initializes a repository
+git init, initializes a new repository
 git status, checks the current status of a repository
 git push, uploads local content to a remote repository
 git fetch, imports commits to local branches
 git clone, copies a remote repository to a new directory at another location
 git push origin master, pushes your changes to a remote server
 git push origin test-branch, pushes your code to origin of test-branch in your repository
-git commit -m "<your message here>", adds changed files into a commit with a message
-gitt add ., adds all modified and new (untracked) files to staging area
+git commit -m "<your message here>", adds changed files 
+               into a commit with a message
+git add ., adds all modified and new (untracked) files to staging area
 git pull, pulls in changes just pushed to repository
 git checkout -b "new branch," creates new branch
