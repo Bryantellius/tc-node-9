@@ -75,8 +75,43 @@ let userScores = users.map(trimUser);
 
 console.log(userScores);
 
-// Exercise 4
+// Exercise 4: Filter
+// Returns a new array with elements that passed a condition from a callback function
+// The callback function should return true (include) or false (exclude)
 
-// Exercise 5
+// function isActive(user) {
+//   return user.isActive === true;
+// }
 
-// Exercise 6
+let filteredUsers = users.filter((user) => user.isActive);
+
+console.log(filteredUsers);
+
+// Exercise 5: Sort
+
+function sortDesc(userA, userB) {
+  if (userA.score < userB.score) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+
+users.sort(sortDesc);
+
+console.log(users);
+
+// Exercise 6: Reduce
+
+function reduceSum(sum, user) {
+  return sum + user.score;
+}
+
+let sumScores = users.reduce(reduceSum, 0);
+
+console.log(`Avg user score: ${sumScores / users.length}`);
+
+// Function
+
+// Anonymous Function
+// All arrow notation functions are anonymous functions
