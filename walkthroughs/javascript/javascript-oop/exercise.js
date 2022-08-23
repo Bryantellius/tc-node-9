@@ -82,9 +82,62 @@ newPlayer.updateName("Ben");
 newPlayer.name; // "Ben"
 
 // Create a Calculator class
+// asks for a couple numbers
+// asks for some operation
+// shows result
 
 class Calculator {
   result = 0;
+  a;
+  b;
+  op;
+  shouldContinue = false;
+
+  start() {
+    do {
+      this.a = this.getInput("First Number", true);
+      this.b = this.getInput(
+        "Second Number (give no number to use previous result)",
+        true
+      );
+      this.op = this.getInput(
+        "Operation: ('+' for addition, '-' for subtraction, '*' for multiplication, '/' for division)",
+        false
+      );
+
+      if (isNaN(this.b)) {
+        this.b = undefined;
+      }
+
+      switch (true) {
+        case isNaN(this.a):
+          alert("Invalid input");
+          break;
+        case this.op == "+":
+          this.add(this.a, this.b);
+          this.displayResult();
+          break;
+        case this.op == "-":
+          this.subtract(this.a, this.b);
+          this.displayResult();
+          break;
+        case this.op == "*":
+          this.multiply(this.a, this.b);
+          this.displayResult();
+          break;
+        case this.op == "/":
+          this.divide(this.a, this.b);
+          this.displayResult();
+          break;
+        default:
+          alert("Invalid operation");
+      }
+
+      let continueInput = this.getInput("Again? (type 'yes')", false);
+
+      this.shouldContinue = continueInput == "yes";
+    } while (this.shouldContinue);
+  }
 
   add(a, b) {
     if (b === undefined) {
@@ -131,15 +184,20 @@ class Calculator {
   }
 
   displayResult() {
-    console.log(this.result);
+    alert(this.result);
+  }
+
+  getInput(msg, isNumber) {
+    let input = prompt(msg);
+
+    if (isNumber) {
+      return parseFloat(input);
+    }
+
+    return input;
   }
 }
 
 let calculator = new Calculator();
 
-calculator.multiply(4, 2);
-calculator.displayResult(); // 8
-calculator.subtract(3);
-calculator.displayResult(); // 5
-calculator.clear();
-calculator.displayResult(); // 0
+calculator.start();
