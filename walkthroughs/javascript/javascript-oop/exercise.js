@@ -51,11 +51,7 @@ console.log(ben);
 // Create a Coder class
 
 class Coder extends Person {
-  constructor(name, pets, residence, hobbies) {
-    super(name, pets, residence, hobbies);
-
-    this.occupation = "Full Stack Web Developer";
-  }
+  occupation = "Full Stack Web Developer";
 
   greet(name) {
     console.log(`Hello world! ${name} say it with me!`);
@@ -67,4 +63,83 @@ let seth = new Coder("Seth", 0, "Warrior", ["guitar", "video games", "coding"]);
 seth.greet(ben.name);
 ben.greet(seth.name);
 
+class Character {
+  name = "New Character";
+
+  updateName(name) {
+    this.name = name;
+  }
+}
+
+class Warrior extends Character {}
+
+let newPlayer = new Warrior();
+
+newPlayer.name; // "New Character"
+
+newPlayer.updateName("Ben");
+
+newPlayer.name; // "Ben"
+
 // Create a Calculator class
+
+class Calculator {
+  result = 0;
+
+  add(a, b) {
+    if (b === undefined) {
+      this.result += a;
+    } else {
+      this.result = a + b;
+    }
+
+    return this.result;
+  }
+
+  subtract(a, b) {
+    if (b === undefined) {
+      this.result -= a;
+    } else {
+      this.result = a - b;
+    }
+
+    return this.result;
+  }
+
+  multiply(a, b) {
+    if (b === undefined) {
+      this.result *= a;
+    } else {
+      this.result = a * b;
+    }
+
+    return this.result;
+  }
+
+  divide(a, b) {
+    if (b === undefined) {
+      this.result /= a;
+    } else {
+      this.result = a / b;
+    }
+
+    return this.result;
+  }
+
+  clear() {
+    this.result = 0;
+  }
+
+  displayResult() {
+    console.log(this.result);
+  }
+}
+
+let calculator = new Calculator();
+
+calculator.multiply(4, 2);
+calculator.displayResult(); // 8
+calculator.subtract(3);
+calculator.displayResult(); // 5
+calculator.clear();
+calculator.displayResult(); // 0
