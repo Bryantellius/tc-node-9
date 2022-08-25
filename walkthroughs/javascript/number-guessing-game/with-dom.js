@@ -1,1 +1,2 @@
-console.log("Hello Number Guessing Game")
+console.log("Hello Number Guessing Game");
+
