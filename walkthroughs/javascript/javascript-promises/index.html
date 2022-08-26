@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Promises</title>
+    <link rel="stylesheet" href="../../assets/styles/global.css" />
+    <style>
+      h1 {
+        transition: all 2s;
+        animation: fade 1s;
+      }
+
+      body:hover h1 {
+        box-shadow: 10px 10px 10px white;
+        transform: rotate(360deg);
+        color: #333;
+        background-color: #eee;
+        border-color: pink;
+      }
+
+      @keyframes fade {
+        0% {
+          opacity: 0;
+          transform: translateY(100px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <script src="./lesson.js"></script>
+  </head>
+  <body>
+    <div class="full-viewport d-flex justify-center align-center">
+      <div class="content">
+        <h1 class="title">JS Promises</h1>
+      </div>
+    </div>
+  </body>
+</html>
