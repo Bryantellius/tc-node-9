@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("Hello Error Handling!");
+console.log("Hello Promises!");
 
 // Load LinkedIn posts
 // Get the posts asynchronously from a server
