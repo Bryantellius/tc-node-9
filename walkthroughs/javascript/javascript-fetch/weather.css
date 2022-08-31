@@ -1,0 +1,11 @@
+.weather-hot {
+  background-color: red;
+}
+.weather-warm {
+  background-color: orange;
+  transform: rotate(45deg);
+  color: aliceblue;
+}
+.weather-normal {
+  background-color: yellow;
+}
