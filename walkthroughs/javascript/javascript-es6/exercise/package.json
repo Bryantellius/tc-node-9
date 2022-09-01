@@ -1,0 +1,11 @@
+{
+  "name": "es6_modules_exercise",
+  "version": "1.0.0",
+  "description": "Our users should be able to come to our web app to add or remove cars that they want on their Wish List.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Bryant",
+  "license": "ISC"
+}

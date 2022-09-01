@@ -1,0 +1,5 @@
+input:focus,
+button:focus {
+  box-shadow: 0 0 15px #333;
+  border: 3px solid palevioletred;
+}
