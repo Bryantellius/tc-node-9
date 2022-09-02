@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+}
+
+.layout {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: stretch;
+  padding: 1rem;
+}
+
+.editor-container,
+.output {
+  flex: 1 1 50%;
+}
+
+.output {
+  border: 3px solid black;
+}
+
+#editor {
+  border: none;
+  background-color: black;
+  color: white;
+
+  width: 100%;
+  height: 100%;
+
+  resize: none;
+  font-family: inherit;
+  font-size: 100%;
+
+  padding: 0;
+  margin: 0;
+
+  border-radius: 0;
+}

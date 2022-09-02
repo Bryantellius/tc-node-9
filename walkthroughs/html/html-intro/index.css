@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+/* General/Common TagName Rulesets */
+
+main {
+  max-width: 600px;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 5px solid black;
+}
+
+section {
+  min-height: 100vh;
+}
+
+/* General/Common Class Rulesets */
+.m-2 {
+  margin: 2rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+@media only screen and (min-width: 998px) {
+  html {
+    background-color: #222;
+    color: #eee;
+    font-size: 24px;
+  }
+}
+
+/* Specific Rulesets */

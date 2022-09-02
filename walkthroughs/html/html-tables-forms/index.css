@@ -1,0 +1,41 @@
+table {
+  width: 100%;
+  min-width: 400px;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+.border-3 {
+  border: 3px solid black;
+}
+
+.table-wrapper {
+  width: 100%;
+  max-width: 700px;
+
+  overflow-x: scroll;
+}
+
+.text-light {
+  color: #eee;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-dark {
+  background-color: #222;
+}
+
+.bg-yellow {
+  background-color: lightgoldenrodyellow;
+}
+
+.w-fit {
+    width: fit-content;
+}
+

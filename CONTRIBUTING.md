@@ -29,7 +29,7 @@ Complete the following:
 
 1. Create the following file under your newly created folder: `git.csv`
 2. Add as many git commands with descriptions that you can. Reference the [Git Handbook](https://git-scm.com/book/en/v2) if desired.
-3. Only add _one_ command/description pair per line, seperating each command and description by a comma. Preferably do not add a title or any other text to the file.
+3. Only add _one_ command/description pair per line, separating each command and description by a comma. Preferably do not add a title or any other text to the file.
 
 If you need a reference for a started answer, view [answers/Bryantellius/git.csv](/answers/Bryantellius/git.csv).
 
@@ -43,7 +43,7 @@ Complete the following:
 
 1. Create the following file under your newly created folder: `fact.txt`
 2. Add a fact to this file that you don't think any other student would add as well. Use [answers/Bryantellius/fact.txt](answers/Bryantellius/fact.txt) as a reference
-    - You fact can literally be anything (albeit appropriate). Make sure it is unique.
+   - You fact can literally be anything (albeit appropriate). Make sure it is unique.
 
 Be sure to add, commit and push your work back to Github. Once your work is on Github, [submit a pull request](#how-to-submit-a-pull-request).
 

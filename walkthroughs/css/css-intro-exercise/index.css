@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  background-color: #222;
+  color: #eee;
+}
+
+.nav-link {
+  color: orange;
+  text-decoration: none;
+}
+
+main {
+  max-width: 600px;
+  width: 100%;
+  margin: 24px auto;
+  /* margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+section {
+  margin: 24px 0;
+  padding: 16px;
+  /* padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px; */
+}
+
+#title {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.d-inline {
+  display: inline;
+}
+
+nav > ul {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#avatar {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 32px auto;
+
+  background-image: url(./images/undefinedBen.png);
+  background-size: cover;
+  background-position: 50%;
+
+  border-radius: 9999px;
+}

@@ -1,0 +1,153 @@
+:root {
+  --primary-dark-cyan: hsl(158, 36%, 37%);
+  --primary-cream: hsl(30, 38%, 92%);
+  --neutral-dark-blue: hsl(212, 21%, 14%);
+  --neutral-gray-blue: hsl(228, 12%, 48%);
+  --neutral-white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Fraunces, "Times New Roman", Times, serif;
+  font-weight: 700;
+}
+
+.card {
+  background-color: var(--neutral-white);
+  border-radius: 8px;
+
+  margin: 1rem;
+  max-width: 800px;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-img {
+  background-image: url(./images/image-product-mobile.jpg);
+  background-clip: border-box;
+
+  border-radius: 8px 8px 0 0;
+
+  background-size: cover;
+  background-position: 50%;
+
+  min-height: 30vh;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.min-h-100 {
+  min-height: 100vh;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.text-dark-blue {
+  color: var(--neutral-dark-blue);
+}
+
+.text-gray-blue {
+  color: var(--neutral-gray-blue);
+}
+
+.text-dark-cyan {
+  color: var(--primary-dark-cyan);
+}
+
+.text-white {
+  color: var(--neutral-white);
+}
+
+.bg-dark-cyan {
+  background-color: var(--primary-dark-cyan);
+}
+
+.bg-cream {
+  background-color: var(--primary-cream);
+}
+
+.font-fraunces {
+  font-family: Fraunces, "Times New Roman", Times, serif;
+  font-weight: 700;
+}
+
+.size-3 {
+  font-size: 3rem;
+}
+
+.my-2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mx-2 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.text-upper {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 600px) {
+  .card {
+    display: flex;
+  }
+
+  .card-img,
+  .card-body {
+    flex: 1 1 50%;
+  }
+
+  .card-img {
+    background-image: url(./images/image-product-desktop.jpg);
+
+    border-radius: 8px 0 0 8px;
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables and Forms</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- Table -->
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Total Servings</th>
+          <th>Calories</th>
+          <th>Carbs</th>
+          <th>Sugars</th>
+          <th>Sodium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Coca Cola</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Pepsi</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Coca Cola Zero</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Dr. Pepper</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Mountain Dew</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <!-- Form -->
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="servings">Servings:</label>
+        <input type="number" name="servings" id="servings" required min="1" />
+      </div>
+
+      <div class="form-group">
+        <label for="servingSize">Serving Size</label
+        ><input type="number" name="servingSize" id="servingSize" />
+      </div>
+
+      <div class="form-group">
+        <label for="calories">Calories</label
+        ><input type="number" name="calories" id="calories" />
+      </div>
+
+      <div class="form-group">
+        <label for="carbs">Carbs</label
+        ><input type="number" name="carbs" id="carbs" />
+      </div>
+
+      <div class="form-group">
+        <label for="sugars">Sugars</label
+        ><input type="number" name="sugars" id="sugars" />
+      </div>
+
+      <div class="form-group">
+        <label for="sodium">Sodium</label
+        ><input type="number" name="sodium" id="sodium" />
+      </div>
+
+      <div class="form-group">
+        <button>Test</button>
+      </div>
+    </form>
+  </body>
+</html>
