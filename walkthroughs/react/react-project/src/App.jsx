@@ -1,61 +1,55 @@
 import { Component } from "react";
-import TodoApp from "./components/review";
+import Item from "./components/item";
+import List from "./components/list";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.correctNum = Math.round(Math.random() * (100 - 1) + 1); // random number between 1 and 100
-    this.score = 100;
-
     this.state = {
-      feedback: "",
-      guess: "",
+      list: ["ready", "set", "GO"],
+      text: "",
     };
 
-    this.handleGuess = this.handleGuess.bind(this);
+    this.addItem = this.addItem.bind(this);
   }
 
-  handleGuess(event) {
+  addItem(event) {
     event.preventDefault();
 
-    console.log(this.state.guess, this.correctNum);
+    let newItems = [...this.state.list, this.state.text];
 
-    let feedback;
+    this.setState({ list: newItems, text: "" });
+  }
 
-    if (this.state.guess < this.correctNum) {
-      feedback = "Too low";
-    } else if (this.state.guess > this.correctNum) {
-      feedback = "Too high";
-    } else {
-      feedback = `Correct! You finished with a score of ${this.score}.`;
-    }
-
-    this.setState({ feedback });
-    this.score--;
+  deleteItem(item) {
+    let filteredItems = this.state.list.filter((value) => value != item);
+    this.setState({ list: filteredItems });
   }
 
   render() {
+    let listItems = this.state.list.map((item, idx) => (
+      <Item key={idx} content={item} onDelete={() => this.deleteItem(item)} />
+    ));
+
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Number Guessing Game</h1>
-          <p>{this.state.feedback}</p>
-          <form onSubmit={this.handleGuess}>
-            <label htmlFor="guess">Enter a guess:</label>
+          <h1>Hello World</h1>
+          
+          <List>{listItems}</List>
+          <List ordered>{listItems}</List>
+
+          <form onSubmit={this.addItem}>
             <input
-              type="number"
-              name="guess"
-              id="guess"
-              value={this.state.guess}
-              onChange={(event) =>
-                this.setState({ guess: Number(event.target.value) })
-              }
+              type="text"
+              name="newTask"
+              id="newTask"
+              value={this.state.text}
+              onChange={(event) => this.setState({ text: event.target.value })}
             />
-            <button type="submit">Submit</button>
+            <button>Add</button>
           </form>
-          <hr />
-          <TodoApp />
         </header>
       </div>
     );
