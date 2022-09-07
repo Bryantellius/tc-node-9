@@ -1,12 +1,9 @@
 import { Component } from "react";
+import TodoApp from "./components/review";
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    // Feedback
-    // Number to guess
-    // Guessed number
 
     this.correctNum = Math.round(Math.random() * (100 - 1) + 1); // random number between 1 and 100
     this.score = 100;
@@ -57,6 +54,8 @@ class App extends Component {
             />
             <button type="submit">Submit</button>
           </form>
+          <hr />
+          <TodoApp />
         </header>
       </div>
     );
