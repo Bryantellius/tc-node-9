@@ -1,8 +1,6 @@
 import { Component } from "react";
-import FilmsList from "./components/lifecyclemethods/filmslist";
-import SGList from "./components/lifecyclemethods/studioghiblilist";
-import Item from "./components/stateandprops/item";
-import List from "./components/stateandprops/list";
+import Item from "./item";
+import List from "./list";
 
 class App extends Component {
   constructor(props) {
@@ -40,6 +38,7 @@ class App extends Component {
           <h1>Hello World</h1>
 
           <List>{listItems}</List>
+          <List ordered>{listItems}</List>
 
           <form onSubmit={this.addItem}>
             <input
@@ -51,8 +50,6 @@ class App extends Component {
             />
             <button>Add</button>
           </form>
-
-          <SGList />
         </header>
       </div>
     );
