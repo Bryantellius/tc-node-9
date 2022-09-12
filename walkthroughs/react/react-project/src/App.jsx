@@ -1,62 +1,40 @@
-import { Component } from "react";
-import FilmsList from "./components/lifecyclemethods/filmslist";
-import SGList from "./components/lifecyclemethods/studioghiblilist";
-import Item from "./components/stateandprops/item";
-import List from "./components/stateandprops/list";
+import { useState, useEffect } from "react";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+function App(props) {
+  let [count, setCount] = useState(0);
+  let [title, setTitle] = useState("React Hooks");
+  let [films, setFilms] = useState([]);
 
-    this.state = {
-      list: ["ready", "set", "GO"],
-      text: "",
-    };
-
-    this.addItem = this.addItem.bind(this);
+  async function getFilms() {
+    let res = await fetch("https://ghibliapi.herokuapp.com/films");
+    let data = await res.json();
+    setFilms(data);
   }
 
-  addItem(event) {
-    event.preventDefault();
+  useEffect(() => {
+    // call the studio ghibli api for films
+    getFilms();
+  }, []);
 
-    let newItems = [...this.state.list, this.state.text];
-
-    this.setState({ list: newItems, text: "" });
-  }
-
-  deleteItem(item) {
-    let filteredItems = this.state.list.filter((value) => value != item);
-    this.setState({ list: filteredItems });
-  }
-
-  render() {
-    let listItems = this.state.list.map((item, idx) => (
-      <Item key={idx} content={item} onDelete={() => this.deleteItem(item)} />
-    ));
-
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Hello World</h1>
-
-          <List>{listItems}</List>
-
-          <form onSubmit={this.addItem}>
-            <input
-              type="text"
-              name="newTask"
-              id="newTask"
-              value={this.state.text}
-              onChange={(event) => this.setState({ text: event.target.value })}
-            />
-            <button>Add</button>
-          </form>
-
-          <SGList />
-        </header>
+  return (
+    <div className="App">
+      <div className="App-header">
+        <h1>
+          Title: {title} and Click Count: {count}
+        </h1>
+        <hr />
+        <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        <hr />
+        <button onClick={(e) => setCount(count + 1)}>Update Count</button>
+        <hr />
+        <ul>
+          {films.map((film) => (
+            <li key={film.id}>{film.title}</li>
+          ))}
+        </ul>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
