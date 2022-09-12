@@ -1,62 +1,52 @@
-import { Component } from "react";
-import FilmsList from "./components/lifecyclemethods/filmslist";
-import SGList from "./components/lifecyclemethods/studioghiblilist";
-import Item from "./components/stateandprops/item";
-import List from "./components/stateandprops/list";
+import { useState } from "react";
+import FilmsList from "./filmslist";
+import Item from "../stateandprops/item";
+import List from "../stateandprops/list";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+function App(props) {
+  let [list, setList] = useState(["ready", "set", "GO"]);
+  let [text, setText] = useState("");
 
-    this.state = {
-      list: ["ready", "set", "GO"],
-      text: "",
-    };
-
-    this.addItem = this.addItem.bind(this);
-  }
-
-  addItem(event) {
+  function addItem(event) {
     event.preventDefault();
 
-    let newItems = [...this.state.list, this.state.text];
+    let newItems = [...list, text];
 
-    this.setState({ list: newItems, text: "" });
+    setList(newItems);
+    setText("");
   }
 
-  deleteItem(item) {
-    let filteredItems = this.state.list.filter((value) => value != item);
-    this.setState({ list: filteredItems });
+  function deleteItem(item) {
+    let filteredItems = list.filter((value) => value != item);
+    setList(filteredItems);
   }
 
-  render() {
-    let listItems = this.state.list.map((item, idx) => (
-      <Item key={idx} content={item} onDelete={() => this.deleteItem(item)} />
-    ));
+  let listItems = list.map((item, idx) => (
+    <Item key={idx} content={item} onDelete={() => deleteItem(item)} />
+  ));
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Hello World</h1>
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Hello World</h1>
 
-          <List>{listItems}</List>
+        <List>{listItems}</List>
 
-          <form onSubmit={this.addItem}>
-            <input
-              type="text"
-              name="newTask"
-              id="newTask"
-              value={this.state.text}
-              onChange={(event) => this.setState({ text: event.target.value })}
-            />
-            <button>Add</button>
-          </form>
+        <form onSubmit={addItem}>
+          <input
+            type="text"
+            name="newTask"
+            id="newTask"
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+          />
+          <button>Add</button>
+        </form>
 
-          <SGList />
-        </header>
-      </div>
-    );
-  }
+        <FilmsList />
+      </header>
+    </div>
+  );
 }
 
 export default App;

@@ -1,39 +1,27 @@
-import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AboutPage from "./views/about.page";
+import Nav from "./components/routing/nav";
 
-function App(props) {
-  let [count, setCount] = useState(0);
-  let [title, setTitle] = useState("React Hooks");
-  let [films, setFilms] = useState([]);
-
-  async function getFilms() {
-    let res = await fetch("https://ghibliapi.herokuapp.com/films");
-    let data = await res.json();
-    setFilms(data);
-  }
-
-  useEffect(() => {
-    // call the studio ghibli api for films
-    getFilms();
-  }, []);
-
+function View({ title }) {
   return (
     <div className="App">
       <div className="App-header">
-        <h1>
-          Title: {title} and Click Count: {count}
-        </h1>
-        <hr />
-        <input value={title} onChange={(e) => setTitle(e.target.value)} />
-        <hr />
-        <button onClick={(e) => setCount(count + 1)}>Update Count</button>
-        <hr />
-        <ul>
-          {films.map((film) => (
-            <li key={film.id}>{film.title}</li>
-          ))}
-        </ul>
+        <h1>{title}</h1>
       </div>
     </div>
+  );
+}
+
+function App(props) {
+  return (
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<View title={"Home"} />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<View title={"Contact"} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

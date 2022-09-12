@@ -1,44 +1,37 @@
-import { Component } from "react";
 import { getData } from "../../helpers/data";
+import { useState, useEffect } from "react";
 
-class FilmsList extends Component {
-  constructor(props) {
-    super(props);
+function FilmsList(props) {
+  let [list, setList] = useState([]);
+  let [isLoading, setIsLoading] = useState(true);
 
-    this.state = {
-      list: [],
-      isLoading: true,
-    };
-  }
-
-  //   getFilms() {
+  //  function getFilms() {
   //     fetch("https://ghibliapi.herokuapp.com/films")
   //       .then((res) => res.json())
   //       .then((list) => this.setState({ list, isLoading: false }))
   //       .catch((err) => console.error(err));
   //   }
 
-  async getFilms() {
+  async function getFilms() {
     let list = await getData("films");
-    this.setState({ list, isLoading: false });
+    setList(list);
+    setIsLoading(false);
   }
 
-  componentDidMount() {
-    this.getFilms();
-  }
+  useEffect(() => {
+    getFilms();
+  }, []);
 
-  render() {
-    if (this.state.isLoading) {
-      return <p>Loading...</p>;
-    } else {
-      return (
-        <ul>
-          {this.state.list.map((film) => (
-            <li key={film.id}>{film.title}</li>
-          ))}
-        </ul>
-      );
-    }
+  if (isLoading) {
+    return <p>Loading...</p>;
+  } else {
+    return (
+      <ul>
+        {list.map((film) => (
+          <li key={film.id}>{film.title}</li>
+        ))}
+      </ul>
+    );
   }
 }
 
