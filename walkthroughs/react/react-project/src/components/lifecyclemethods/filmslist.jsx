@@ -1,21 +1,17 @@
-import { getData } from "../../helpers/data";
 import { useState, useEffect } from "react";
 
 function FilmsList(props) {
   let [list, setList] = useState([]);
   let [isLoading, setIsLoading] = useState(true);
 
-  //  function getFilms() {
-  //     fetch("https://ghibliapi.herokuapp.com/films")
-  //       .then((res) => res.json())
-  //       .then((list) => this.setState({ list, isLoading: false }))
-  //       .catch((err) => console.error(err));
-  //   }
-
-  async function getFilms() {
-    let list = await getData("films");
-    setList(list);
-    setIsLoading(false);
+  function getFilms() {
+    fetch("https://ghibliapi.herokuapp.com/films")
+      .then((res) => res.json())
+      .then((list) => {
+        setList(list);
+        setIsLoading(false);
+      })
+      .catch((err) => console.error(err));
   }
 
   useEffect(() => {
