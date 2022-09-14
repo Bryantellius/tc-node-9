@@ -17,12 +17,13 @@ export default function FilmsPage() {
   }, []);
 
   let filteredFilms = filterFilmsByDirector(list, searchDirector);
+  let directors = getListOf(list, "director");
 
   return (
     <div>
       <h1>Studio Ghibli Films</h1>
       <div>
-        <label htmlFor="searchDirector">Filter by Director:{" "}</label>
+        <label htmlFor="searchDirector">Filter by Director: </label>
         <select
           name="searchDirector"
           id="searchDirector"
@@ -30,7 +31,11 @@ export default function FilmsPage() {
           onChange={(event) => setSearchDirector(event.target.value)}
         >
           <option value="">All</option>
-          {/* get the director options */}
+          {directors.map((director, idx) => (
+            <option key={director + idx} value={director}>
+              {director}
+            </option>
+          ))}
         </select>
       </div>
       <ul>
