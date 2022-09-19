@@ -7,10 +7,10 @@ export default function Navbar(props) {
       <nav>
         <ul>
           <li>
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/"} className={({isActive}) => `App-link ${isActive ? "active" : ""}`}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={"/films"}>Films</NavLink>
+            <NavLink to={"/films"} className={({isActive}) => `App-link ${isActive ? "active" : ""}`}>Films</NavLink>
           </li>
         </ul>
       </nav>
